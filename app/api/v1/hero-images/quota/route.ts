@@ -1,0 +1,2 @@
+import { NextResponse } from "next/server";import { getFalQuota } from "@/lib/server/fal-quota";import { securityHeaders } from "@/lib/server/request-security";import { getRequestSession } from "@/lib/server/session";
+export async function GET(request:Request){const session=await getRequestSession(request);if(!session)return NextResponse.json({error:"Unauthorized"},{status:401,headers:securityHeaders()});return NextResponse.json(getFalQuota(session.accountId),{headers:securityHeaders()});}

@@ -1,0 +1,256 @@
+
+> neuro-platform-prototype@0.23.0 test:database
+> node tests/database-contract.mjs
+
+DATABASE CONTRACT: OK
+- Миграций: 7
+- Таблиц: 78
+- Внешних ссылок на таблицы: 23
+- Seed accounts/projects/tasks: 2/1/1
+- RLS таблиц проверено: 14
+
+> neuro-platform-prototype@0.23.0 test:openapi
+> node tests/openapi-contract.mjs
+
+OPENAPI CONTRACT: OK
+- Paths: 64
+- Operations: 82
+- Schemas: 31
+- Public/protected: 16/66
+- References checked: 580
+SECURITY STATIC: OK
+- Files scanned: 110
+- Signed sessions, headers, fal limits, privacy and permissions: OK
+
+> neuro-platform-prototype@0.23.0 test:final
+> node tests/final-local-audit.mjs
+
+FINAL LOCAL AUDIT: OK
+- Генерируемая директория node_modules присутствует в установленной рабочей копии и исключается из релизного архива
+- Файлов проверено: 289
+- Source-файлов проверено на опасные паттерны: 113
+- Resolved package hosts: registry.npmjs.org
+- Миграций с подтверждённой checksum: 7
+- Таблиц/API paths/API operations: 78/64/82
+
+> neuro-platform-prototype@0.23.0 test:a11y
+> node tests/accessibility-static.mjs
+
+{
+  "skipLink": "ok",
+  "liveRegion": "ok",
+  "keyboardSearch": "ok",
+  "focusVisible": "ok",
+  "reducedMotion": "ok",
+  "highContrast": "ok",
+  "mobileDock": "ok",
+  "minimumText": "ok",
+  "iconLabels": "ok",
+  "dialogSemantics": "ok"
+}
+
+> neuro-platform-prototype@0.23.0 test:ui
+> node tests/ui-interaction-contract.mjs
+
+UI INTERACTION CONTRACT: OK
+- TSX-файлов проверено: 52
+- Пустых активных кнопок и href="#" не найдено
+
+> neuro-platform-prototype@0.23.0 test:design
+> node tests/design-contract.mjs
+
+DESIGN CONTRACT: OK
+- Auth 320 px overflow guard: ok
+- Compact topbar: ok
+- Mobile popovers and modal: ok
+- Minimum critical text sizes: ok
+- Long content wrapping: ok
+- Design Lab stress cases: ok
+
+> neuro-platform-prototype@0.23.0 test:layout
+> node tests/layout-stress-contract.mjs
+
+LAYOUT STRESS CONTRACT: OK
+- Responsive breakpoints checked: 420, 500, 520, 560, 620, 680, 700, 720, 760, 800, 900, 950, 980, 1000, 1050, 1100, 1250 px
+- Grid min-content guards: ok
+- Modal and horizontal-scroll containment: ok
+- Touch target and password control: ok
+- Long content and wide table stress cases: ok
+
+> neuro-platform-prototype@0.23.0 test:density
+> node tests/visual-density-contract.mjs
+
+VISUAL DENSITY CONTRACT: OK
+- Critical text floor: ok
+- Header compression guard: ok
+- Mobile modal action layout: ok
+- Reduced motion and focus visibility: ok
+- Icon-only controls: labelled
+
+> neuro-platform-prototype@0.23.0 test:contrast
+> node tests/color-contrast-contract.mjs
+
+COLOR CONTRAST CONTRACT: OK
+- text: 18.32:1
+- muted: 6.92:1
+- cyan: 11.11:1
+- primaryStart: 10.95:1
+- primaryEnd: 5.03:1
+
+> neuro-platform-prototype@0.23.0 test:forms
+> node tests/form-semantics-contract.mjs
+
+FORM SEMANTICS CONTRACT: OK
+- Email, name and password autocomplete: ok
+- Mobile verification code input: ok
+- Password visibility control: ok
+- Explicit button types: ok
+
+> neuro-platform-prototype@0.23.0 test:visual-metrics
+> node tests/rendered-visual-metrics.mjs
+
+RENDERED VISUAL METRICS: OK
+- Chromium snapshots: 16
+- Viewports: 320, 390, 768, 1440 px
+- Page horizontal overflow: none
+- Critical tiny text: none
+- Damaged screenshots: none
+
+> neuro-platform-prototype@0.23.0 build
+> next build
+
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+▲ Next.js 16.2.10 (Turbopack)
+- Experiments (use with caution):
+  · cpus: 1
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 13.5s
+  Running TypeScript ...
+  Finished TypeScript in 7.6s ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/22) ...
+  Generating static pages using 1 worker (5/22)
+  Generating static pages using 1 worker (10/22)
+  Generating static pages using 1 worker (16/22)
+✓ Generating static pages using 1 worker (22/22) in 409ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/v1/[...path]
+├ ƒ /api/v1/auth/[...path]
+├ ƒ /api/v1/community/[...path]
+├ ƒ /api/v1/files
+├ ƒ /api/v1/files/[id]
+├ ƒ /api/v1/files/[id]/review
+├ ƒ /api/v1/game/[...path]
+├ ƒ /api/v1/git/[...path]
+├ ƒ /api/v1/health
+├ ƒ /api/v1/hero-images/generate
+├ ƒ /api/v1/hero-images/quota
+├ ƒ /api/v1/jobs
+├ ƒ /api/v1/local-state
+├ ƒ /api/v1/moderation/[...path]
+├ ƒ /api/v1/notifications/email/digest
+├ ƒ /api/v1/notifications/email/event
+├ ƒ /api/v1/notifications/email/test
+├ ƒ /api/v1/portable-data
+├ ƒ /api/v1/recognition/[...path]
+├ ○ /blocked
+├ ƒ /contributions/[id]
+├ ○ /design-lab
+├ ○ /forgot-password
+├ ○ /icon.svg
+├ ○ /login
+├ ƒ /p/[slug]
+├ ○ /register
+├ ○ /reset-password
+├ ○ /session-expired
+├ ƒ /u/[nickname]
+└ ○ /verify-email
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+
+> neuro-platform-prototype@0.23.0 test:prebackend-runtime
+> node tests/prebackend-runtime-contract.mjs
+
+{
+  "registration": "ok",
+  "durableState": "ok",
+  "portableData": "ok",
+  "tamperedImport": "blocked",
+  "safeUpload": "ok",
+  "duplicateUpload": "deduplicated",
+  "unsafeUpload": "blocked",
+  "crossAccountAccess": "blocked",
+  "reviewPermission": "blocked",
+  "adminJobs": "forbidden"
+}
+
+> neuro-platform-prototype@0.23.0 build
+> next build
+
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+▲ Next.js 16.2.10 (Turbopack)
+- Experiments (use with caution):
+  · cpus: 1
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 12.9s
+  Running TypeScript ...
+  Finished TypeScript in 7.1s ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/22) ...
+  Generating static pages using 1 worker (5/22)
+  Generating static pages using 1 worker (10/22)
+  Generating static pages using 1 worker (16/22)
+✓ Generating static pages using 1 worker (22/22) in 370ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/v1/[...path]
+├ ƒ /api/v1/auth/[...path]
+├ ƒ /api/v1/community/[...path]
+├ ƒ /api/v1/files
+├ ƒ /api/v1/files/[id]
+├ ƒ /api/v1/files/[id]/review
+├ ƒ /api/v1/game/[...path]
+├ ƒ /api/v1/git/[...path]
+├ ƒ /api/v1/health
+├ ƒ /api/v1/hero-images/generate
+├ ƒ /api/v1/hero-images/quota
+├ ƒ /api/v1/jobs
+├ ƒ /api/v1/local-state
+├ ƒ /api/v1/moderation/[...path]
+├ ƒ /api/v1/notifications/email/digest
+├ ƒ /api/v1/notifications/email/event
+├ ƒ /api/v1/notifications/email/test
+├ ƒ /api/v1/portable-data
+├ ƒ /api/v1/recognition/[...path]
+├ ○ /blocked
+├ ƒ /contributions/[id]
+├ ○ /design-lab
+├ ○ /forgot-password
+├ ○ /icon.svg
+├ ○ /login
+├ ƒ /p/[slug]
+├ ○ /register
+├ ○ /reset-password
+├ ○ /session-expired
+├ ƒ /u/[nickname]
+└ ○ /verify-email
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand

@@ -1,0 +1,22 @@
+import assert from "node:assert/strict";
+import { mkdtempSync, rmSync } from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { defaultState } from "../services/platform-gateway";
+import { getPersistentStore, resetPersistentStoreForTests } from "../lib/server/persistence";
+import { createPortableData, importPortableData, validatePortableData } from "../lib/server/portable-data";
+
+const root = mkdtempSync(path.join(os.tmpdir(), "neurodelo-portable-"));
+process.env.NEURODELO_DATA_DIR = root;
+resetPersistentStoreForTests();
+getPersistentStore().set("platform-state", "source", structuredClone(defaultState));
+const envelope = createPortableData("source");
+assert.ok(envelope);
+assert.equal(envelope.sourceRelease, "prebackend-final-0.23.0");
+assert.equal(validatePortableData(envelope).ok, true);
+const corrupted = structuredClone(envelope!); corrupted.state.profile.nickname = "tampered";
+assert.equal(validatePortableData(corrupted).ok, false);
+importPortableData("target", envelope!);
+assert.equal(getPersistentStore().get<typeof defaultState>("platform-state", "target")?.profile.nickname, defaultState.profile.nickname);
+rmSync(root, { recursive: true, force: true });
+console.log("PORTABLE DATA CONTRACT: OK");

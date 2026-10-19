@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "accounts": [
+    {"id":"00000000-0000-4000-8000-000000000001","email":"demo@neurodelo.local","slug":"tbv"},
+    {"id":"00000000-0000-4000-8000-000000000002","email":"mentor@neurodelo.local","slug":"mentor-alex"}
+  ],
+  "projects": [
+    {"id":"10000000-0000-4000-8000-000000000001","slug":"neurodelo-platform","ownerAccountId":"00000000-0000-4000-8000-000000000002","status":"published"}
+  ],
+  "tasks": [
+    {"id":"20000000-0000-4000-8000-000000000001","projectId":"10000000-0000-4000-8000-000000000001","status":"claimed","claimedByAccountId":"00000000-0000-4000-8000-000000000001"}
+  ],
+  "repositories": [
+    {"id":"30000000-0000-4000-8000-000000000001","projectId":"10000000-0000-4000-8000-000000000001","fullName":"example/neurodelo-platform"}
+  ],
+  "contributions": [
+    {"id":"40000000-0000-4000-8000-000000000001","projectId":"10000000-0000-4000-8000-000000000001","contributorAccountId":"00000000-0000-4000-8000-000000000001","status":"accepted"}
+  ]
+}

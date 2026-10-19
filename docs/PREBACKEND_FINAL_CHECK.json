@@ -1,0 +1,70 @@
+{
+  "release": "prebackend-final-0.23.0",
+  "date": "2026-07-18",
+  "status": "passed",
+  "cleanInstall": true,
+  "packageRegistry": "registry.npmjs.org",
+  "lint": "passed",
+  "typecheck": "passed",
+  "productionBuildFallback": "passed",
+  "productionBuildApiMode": "passed",
+  "database": {
+    "migrations": 7,
+    "tables": 78,
+    "contract": "passed"
+  },
+  "openapi": {
+    "paths": 64,
+    "operations": 82,
+    "schemas": 31,
+    "contract": "passed"
+  },
+  "design": {
+    "viewports": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "screenshots": 16,
+    "horizontalOverflow": 0,
+    "criticalTinyText": 0,
+    "status": "passed"
+  },
+  "runtime": {
+    "registration": "passed",
+    "durableState": "passed",
+    "portableData": "passed",
+    "tamperedImport": "blocked",
+    "safeUpload": "passed",
+    "duplicateUpload": "deduplicated",
+    "unsafeUpload": "blocked",
+    "crossAccountRead": "blocked",
+    "unauthorizedReview": "blocked",
+    "adminJobsForContributor": "blocked"
+  },
+  "security": {
+    "knownProductionVulnerabilities": 0,
+    "signedSessions": "passed",
+    "originChecks": "passed",
+    "rateLimits": "passed",
+    "objectOwnership": "passed"
+  },
+  "archiveExclusions": [
+    "node_modules",
+    ".next",
+    ".data",
+    "backups",
+    ".env private files",
+    "historical step logs"
+  ],
+  "remainingRequiresInfrastructure": [
+    "PostgreSQL",
+    "Redis",
+    "MinIO/S3",
+    "GitHub App",
+    "Resend webhooks",
+    "WebSocket/SSE",
+    "production monitoring and backups"
+  ]
+}

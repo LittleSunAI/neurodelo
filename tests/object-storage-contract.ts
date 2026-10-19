@@ -1,0 +1,34 @@
+import assert from "node:assert/strict";
+import { mkdtempSync, rmSync } from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { resetPersistentStoreForTests } from "../lib/server/persistence";
+import { deleteStoredObject, getStoredObject, listStoredObjects, objectStorageHealth, readStoredObject, reviewStoredObject, storeUploadedObject } from "../lib/server/object-storage";
+
+const root = mkdtempSync(path.join(os.tmpdir(), "neurodelo-object-"));
+process.env.NEURODELO_DATA_DIR = root;
+process.env.NEURODELO_OBJECT_DIR = path.join(root, "objects");
+process.env.OBJECT_AUTO_APPROVE_SAFE = "false";
+resetPersistentStoreForTests();
+
+const png = Buffer.alloc(32);
+Buffer.from([0x89,0x50,0x4e,0x47,0x0d,0x0a,0x1a,0x0a]).copy(png,0);
+png.writeUInt32BE(13,8); Buffer.from("IHDR").copy(png,12); png.writeUInt32BE(64,16); png.writeUInt32BE(64,20);
+const first = storeUploadedObject({ ownerAccountId: "account-a", scope: "avatar", originalName: "../../опасный<script>.png", buffer: png });
+assert.equal(first.metadata.status, "quarantined");
+assert.equal(first.metadata.safeName.includes(".."), false);
+assert.equal(first.metadata.width, 64);
+assert.equal(readStoredObject(first.metadata).byteLength, png.byteLength);
+const approved = reviewStoredObject(first.metadata.id, "approved", "moderator-a");
+assert.equal(approved.status, "approved");
+assert.equal(getStoredObject(first.metadata.id)?.reviewedByAccountId, "moderator-a");
+const duplicate = storeUploadedObject({ ownerAccountId: "account-a", scope: "avatar", originalName: "copy.png", buffer: png });
+assert.equal(duplicate.deduplicated, true);
+assert.equal(duplicate.metadata.id, first.metadata.id);
+assert.equal(listStoredObjects("account-a").length, 1);
+assert.throws(() => storeUploadedObject({ ownerAccountId: "account-a", scope: "attachment", originalName: "payload.exe", buffer: Buffer.from("MZ\0\0") }), /не разрешён|соответствует/);
+assert.equal(objectStorageHealth().objects, 1);
+assert.equal(deleteStoredObject(first.metadata.id), true);
+assert.equal(getStoredObject(first.metadata.id), null);
+rmSync(root, { recursive: true, force: true });
+console.log("OBJECT STORAGE CONTRACT: OK");

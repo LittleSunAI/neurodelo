@@ -1,0 +1,581 @@
+{
+  "version": "1.0.0",
+  "basePath": "/api/v1",
+  "count": 82,
+  "endpoints": [
+    {
+      "method": "POST",
+      "path": "/auth/email/verify",
+      "operationId": "verifyEmail",
+      "tag": "Auth",
+      "auth": false
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "operationId": "login",
+      "tag": "Auth",
+      "auth": false
+    },
+    {
+      "method": "POST",
+      "path": "/auth/logout",
+      "operationId": "logout",
+      "tag": "Auth",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/auth/password/change",
+      "operationId": "changePassword",
+      "tag": "Auth",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/auth/password/forgot",
+      "operationId": "forgotPassword",
+      "tag": "Auth",
+      "auth": false
+    },
+    {
+      "method": "POST",
+      "path": "/auth/password/request",
+      "operationId": "requestPasswordReset",
+      "tag": "Auth",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/auth/password/reset",
+      "operationId": "resetPassword",
+      "tag": "Auth",
+      "auth": false
+    },
+    {
+      "method": "POST",
+      "path": "/auth/refresh",
+      "operationId": "refreshSession",
+      "tag": "Auth",
+      "auth": false
+    },
+    {
+      "method": "POST",
+      "path": "/auth/register",
+      "operationId": "registerAccount",
+      "tag": "Auth",
+      "auth": false
+    },
+    {
+      "method": "GET",
+      "path": "/auth/session",
+      "operationId": "getCurrentSession",
+      "tag": "Auth",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/auth/sessions",
+      "operationId": "listSessions",
+      "tag": "Auth",
+      "auth": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/auth/sessions/{id}",
+      "operationId": "revokeSession",
+      "tag": "Auth",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/contributions",
+      "operationId": "listContributions",
+      "tag": "Contributions",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/contributions",
+      "operationId": "createContribution",
+      "tag": "Contributions",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/contributions/{id}",
+      "operationId": "getContribution",
+      "tag": "Contributions",
+      "auth": false
+    },
+    {
+      "method": "POST",
+      "path": "/contributions/{id}/accept",
+      "operationId": "acceptContribution",
+      "tag": "Contributions",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/contributions/{id}/submit",
+      "operationId": "submitContribution",
+      "tag": "Contributions",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/conversations",
+      "operationId": "listConversations",
+      "tag": "Community",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/conversations",
+      "operationId": "createConversation",
+      "tag": "Community",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/conversations/{id}/messages",
+      "operationId": "listMessages",
+      "tag": "Community",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/conversations/{id}/messages",
+      "operationId": "sendMessage",
+      "tag": "Community",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/files",
+      "operationId": "listStoredFiles",
+      "tag": "Files",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/files",
+      "operationId": "uploadStoredFile",
+      "tag": "Files",
+      "auth": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/files/{id}",
+      "operationId": "deleteStoredFile",
+      "tag": "Files",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/files/{id}",
+      "operationId": "getStoredFile",
+      "tag": "Files",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/files/{id}/review",
+      "operationId": "reviewStoredFile",
+      "tag": "Files",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/forum/threads",
+      "operationId": "listForumThreads",
+      "tag": "Community",
+      "auth": false
+    },
+    {
+      "method": "POST",
+      "path": "/forum/threads",
+      "operationId": "createForumThread",
+      "tag": "Community",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/forum/threads/{id}",
+      "operationId": "getForumThread",
+      "tag": "Community",
+      "auth": false
+    },
+    {
+      "method": "GET",
+      "path": "/forum/threads/{id}/posts",
+      "operationId": "listForumPosts",
+      "tag": "Community",
+      "auth": false
+    },
+    {
+      "method": "POST",
+      "path": "/forum/threads/{id}/posts",
+      "operationId": "createForumPost",
+      "tag": "Community",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/game/battles",
+      "operationId": "runBattle",
+      "tag": "Game",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/game/challenges/{id}/claim",
+      "operationId": "claimChallengeReward",
+      "tag": "Game",
+      "auth": true
+    },
+    {
+      "method": "PUT",
+      "path": "/game/equipment",
+      "operationId": "equipGameItem",
+      "tag": "Game",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/game/profile",
+      "operationId": "getGameProfile",
+      "tag": "Game",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/game/skills/{id}/unlock",
+      "operationId": "unlockGameSkill",
+      "tag": "Game",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/git/pull-requests",
+      "operationId": "listPullRequests",
+      "tag": "Git",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/git/pull-requests",
+      "operationId": "createPullRequest",
+      "tag": "Git",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/git/pull-requests/{id}/checks",
+      "operationId": "runPullRequestChecks",
+      "tag": "Git",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/git/pull-requests/{id}/merge",
+      "operationId": "mergePullRequest",
+      "tag": "Git",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/git/repositories",
+      "operationId": "listGitRepositories",
+      "tag": "Git",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/git/repositories/{id}/sync",
+      "operationId": "syncGitRepository",
+      "tag": "Git",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/health",
+      "operationId": "getHealth",
+      "tag": "System",
+      "auth": false
+    },
+    {
+      "method": "POST",
+      "path": "/hero-images/generate",
+      "operationId": "generateHeroImageSecure",
+      "tag": "Hero images",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/hero-images/quota",
+      "operationId": "getHeroImageQuota",
+      "tag": "Hero images",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/jobs",
+      "operationId": "listBackgroundJobs",
+      "tag": "Jobs",
+      "auth": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/local-state",
+      "operationId": "deleteDurableLocalState",
+      "tag": "Users",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/local-state",
+      "operationId": "getDurableLocalState",
+      "tag": "Users",
+      "auth": true
+    },
+    {
+      "method": "PUT",
+      "path": "/local-state",
+      "operationId": "saveDurableLocalState",
+      "tag": "Users",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/moderation/cases",
+      "operationId": "listModerationCases",
+      "tag": "Moderation",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/moderation/cases/{id}/appeals",
+      "operationId": "createAppeal",
+      "tag": "Moderation",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/moderation/cases/{id}/decision",
+      "operationId": "decideModerationCase",
+      "tag": "Moderation",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/moderation/feature-flags",
+      "operationId": "listFeatureFlags",
+      "tag": "Moderation",
+      "auth": true
+    },
+    {
+      "method": "PATCH",
+      "path": "/moderation/feature-flags",
+      "operationId": "updateFeatureFlag",
+      "tag": "Moderation",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/notifications",
+      "operationId": "listNotifications",
+      "tag": "Notifications",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/notifications/email/digest",
+      "operationId": "sendNotificationDigest",
+      "tag": "Notifications",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/notifications/email/event",
+      "operationId": "sendNotificationEvent",
+      "tag": "Notifications",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/notifications/email/test",
+      "operationId": "sendTestEmail",
+      "tag": "Notifications",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/notifications/{id}/read",
+      "operationId": "markNotificationRead",
+      "tag": "Notifications",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/portable-data",
+      "operationId": "exportPortableData",
+      "tag": "Data portability",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/portable-data",
+      "operationId": "importPortableData",
+      "tag": "Data portability",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/projects",
+      "operationId": "listProjects",
+      "tag": "Projects",
+      "auth": false
+    },
+    {
+      "method": "POST",
+      "path": "/projects",
+      "operationId": "createProject",
+      "tag": "Projects",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{slug}",
+      "operationId": "getProject",
+      "tag": "Projects",
+      "auth": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/projects/{slug}",
+      "operationId": "updateProject",
+      "tag": "Projects",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/projects/{slug}/join",
+      "operationId": "joinProject",
+      "tag": "Projects",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{slug}/tasks",
+      "operationId": "listProjectTasks",
+      "tag": "Projects",
+      "auth": false
+    },
+    {
+      "method": "POST",
+      "path": "/projects/{slug}/tasks",
+      "operationId": "createProjectTask",
+      "tag": "Projects",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/projects/{slug}/tasks/{id}/claim",
+      "operationId": "claimTask",
+      "tag": "Projects",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/recognition/contributions/{id}",
+      "operationId": "getRecognition",
+      "tag": "Recognition",
+      "auth": false
+    },
+    {
+      "method": "POST",
+      "path": "/recognition/kudos",
+      "operationId": "createKudos",
+      "tag": "Recognition",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/recognition/xp-transactions",
+      "operationId": "listXpTransactions",
+      "tag": "Recognition",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/recognition/xp-transactions/{id}/reverse",
+      "operationId": "reverseXpTransaction",
+      "tag": "Recognition",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/users/me",
+      "operationId": "getMyProfile",
+      "tag": "Users",
+      "auth": true
+    },
+    {
+      "method": "PATCH",
+      "path": "/users/me",
+      "operationId": "updateMyProfile",
+      "tag": "Users",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/users/me/hero",
+      "operationId": "getHero",
+      "tag": "Game",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/users/me/hero-images",
+      "operationId": "listHeroImages",
+      "tag": "Hero images",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/users/me/hero-images",
+      "operationId": "uploadHeroImage",
+      "tag": "Hero images",
+      "auth": true
+    },
+    {
+      "method": "POST",
+      "path": "/users/me/hero-images/generate",
+      "operationId": "generateHeroImage",
+      "tag": "Hero images",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/users/me/preferences",
+      "operationId": "getPreferences",
+      "tag": "Users",
+      "auth": true
+    },
+    {
+      "method": "PATCH",
+      "path": "/users/me/preferences",
+      "operationId": "updatePreferences",
+      "tag": "Users",
+      "auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/users/{slug}",
+      "operationId": "getPublicProfile",
+      "tag": "Users",
+      "auth": false
+    }
+  ]
+}

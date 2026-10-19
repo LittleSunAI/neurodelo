@@ -1,0 +1,69 @@
+{
+  "name": "neurodelo",
+  "version": "0.23.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test:a11y": "node tests/accessibility-static.mjs",
+    "test:contracts": "tsx tests/fallback-contract.ts && tsx tests/game-fallback-contract.ts && tsx tests/advanced-game-migration-contract.ts && tsx tests/hero-image-fallback-contract.ts && tsx tests/auth-fallback-contract.ts && tsx tests/project-fallback-contract.ts && tsx tests/git-fallback-contract.ts && tsx tests/community-fallback-contract.ts && tsx tests/recognition-fallback-contract.ts && tsx tests/moderation-fallback-contract.ts && npm run test:notifications && npm run test:security && npm run test:step17 && npm run test:storage",
+    "test:database": "node tests/database-contract.mjs",
+    "test:openapi": "node tests/openapi-contract.mjs",
+    "test:step17": "npm run test:database && npm run test:openapi",
+    "test:final": "node tests/final-local-audit.mjs",
+    "test:release": "npm run lint && npm run typecheck && npm run test:contracts && npm run test:api-contracts && npm run test:a11y && npm run test:ui && npm run test:design && npm run test:layout && npm run test:density && npm run test:contrast && npm run test:forms && npm run test:visual-metrics && npm run test:final",
+    "test:ui": "node tests/ui-interaction-contract.mjs",
+    "test:design": "node tests/design-contract.mjs",
+    "test:layout": "node tests/layout-stress-contract.mjs",
+    "test:density": "node tests/visual-density-contract.mjs",
+    "test:contrast": "node tests/color-contrast-contract.mjs",
+    "test:forms": "node tests/form-semantics-contract.mjs",
+    "test:visual-metrics": "node tests/rendered-visual-metrics.mjs",
+    "test:http": "node tests/http-runtime-smoke.mjs",
+    "test:security": "tsx tests/security-foundation-contract.ts && tsx tests/local-auth-store-contract.ts && tsx tests/email-provider-contract.ts && tsx tests/permissions-contract.ts && node tests/security-static.mjs && npm run test:persistence",
+    "test:notifications": "tsx tests/notification-fallback-contract.ts",
+    "test:api-contracts": "node tests/run-api-contracts.mjs",
+    "test:persistence": "tsx tests/persistent-storage-contract.ts",
+    "data:backup": "node scripts/backup-local-data.mjs",
+    "data:verify": "node scripts/verify-local-data.mjs",
+    "data:reset": "node scripts/reset-local-data.mjs",
+    "test:persistence:runtime": "node tests/persistence-runtime-restart.mjs",
+    "test:storage": "tsx tests/object-storage-contract.ts && tsx tests/portable-data-contract.ts && tsx tests/job-queue-contract.ts && tsx tests/abuse-threat-model-contract.ts",
+    "data:cleanup": "tsx scripts/run-local-maintenance.ts",
+    "test:prebackend": "npm run test:storage && npm run test:security && npm run test:step17 && npm run test:prebackend-runtime",
+    "test:prebackend-runtime": "node tests/prebackend-runtime-contract.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "1.24.0",
+    "next": "16.4.2",
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.4.2",
+    "tailwindcss": "4.3.3",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.0"
+  },
+  "overrides": {
+    "postcss": "8.5.31"
+  },
+  "description": "Final pre-backend open-source collaboration prototype with durable persistence, secure local object storage, portable data and infrastructure-ready adapters",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LittleSunAI/neurodelo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LittleSunAI/neurodelo/issues"
+  },
+  "homepage": "https://github.com/LittleSunAI/neurodelo#readme"
+}

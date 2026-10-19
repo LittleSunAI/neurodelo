@@ -1,0 +1,741 @@
+[
+  {
+    "name": "login",
+    "path": "/login",
+    "width": 320,
+    "metrics": {
+      "iw": 320,
+      "clientW": 320,
+      "scrollW": 320,
+      "scrollH": 1375,
+      "bad": [],
+      "tiny": [],
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "w": 13,
+          "h": 42
+        }
+      ]
+    },
+    "file": "docs/design-qa-snapshots/login_320.png"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "width": 390,
+    "metrics": {
+      "iw": 390,
+      "clientW": 390,
+      "scrollW": 390,
+      "scrollH": 1230,
+      "bad": [],
+      "tiny": [],
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "w": 13,
+          "h": 42
+        }
+      ]
+    },
+    "file": "docs/design-qa-snapshots/login_390.png"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "width": 768,
+    "metrics": {
+      "iw": 768,
+      "clientW": 753,
+      "scrollW": 753,
+      "scrollH": 1234,
+      "bad": [],
+      "tiny": [],
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "w": 13,
+          "h": 42
+        }
+      ]
+    },
+    "file": "docs/design-qa-snapshots/login_768.png"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "width": 1440,
+    "metrics": {
+      "iw": 1440,
+      "clientW": 1440,
+      "scrollW": 1440,
+      "scrollH": 1000,
+      "bad": [],
+      "tiny": [],
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "w": 13,
+          "h": 42
+        }
+      ]
+    },
+    "file": "docs/design-qa-snapshots/login_1440.png"
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "width": 320,
+    "metrics": {
+      "iw": 320,
+      "clientW": 320,
+      "scrollW": 320,
+      "scrollH": 1306,
+      "bad": [],
+      "tiny": [],
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "w": 13,
+          "h": 42
+        }
+      ]
+    },
+    "file": "docs/design-qa-snapshots/register_320.png"
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "width": 390,
+    "metrics": {
+      "iw": 390,
+      "clientW": 390,
+      "scrollW": 390,
+      "scrollH": 1156,
+      "bad": [],
+      "tiny": [],
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "w": 13,
+          "h": 42
+        }
+      ]
+    },
+    "file": "docs/design-qa-snapshots/register_390.png"
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "width": 768,
+    "metrics": {
+      "iw": 768,
+      "clientW": 753,
+      "scrollW": 753,
+      "scrollH": 1160,
+      "bad": [],
+      "tiny": [],
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "w": 13,
+          "h": 42
+        }
+      ]
+    },
+    "file": "docs/design-qa-snapshots/register_768.png"
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "width": 1440,
+    "metrics": {
+      "iw": 1440,
+      "clientW": 1440,
+      "scrollW": 1440,
+      "scrollH": 1000,
+      "bad": [],
+      "tiny": [],
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "cls": "",
+          "text": "",
+          "w": 13,
+          "h": 42
+        }
+      ]
+    },
+    "file": "docs/design-qa-snapshots/register_1440.png"
+  },
+  {
+    "name": "forgot",
+    "path": "/forgot-password",
+    "width": 320,
+    "metrics": {
+      "iw": 320,
+      "clientW": 320,
+      "scrollW": 320,
+      "scrollH": 1046,
+      "bad": [],
+      "tiny": [],
+      "smallTargets": []
+    },
+    "file": "docs/design-qa-snapshots/forgot_320.png"
+  },
+  {
+    "name": "forgot",
+    "path": "/forgot-password",
+    "width": 390,
+    "metrics": {
+      "iw": 390,
+      "clientW": 390,
+      "scrollW": 390,
+      "scrollH": 923,
+      "bad": [],
+      "tiny": [],
+      "smallTargets": []
+    },
+    "file": "docs/design-qa-snapshots/forgot_390.png"
+  },
+  {
+    "name": "forgot",
+    "path": "/forgot-password",
+    "width": 768,
+    "metrics": {
+      "iw": 768,
+      "clientW": 768,
+      "scrollW": 768,
+      "scrollH": 1000,
+      "bad": [],
+      "tiny": [],
+      "smallTargets": []
+    },
+    "file": "docs/design-qa-snapshots/forgot_768.png"
+  },
+  {
+    "name": "forgot",
+    "path": "/forgot-password",
+    "width": 1440,
+    "metrics": {
+      "iw": 1440,
+      "clientW": 1440,
+      "scrollW": 1440,
+      "scrollH": 1000,
+      "bad": [],
+      "tiny": [],
+      "smallTargets": []
+    },
+    "file": "docs/design-qa-snapshots/forgot_1440.png"
+  },
+  {
+    "name": "design-lab",
+    "path": "/design-lab",
+    "width": 320,
+    "metrics": {
+      "iw": 320,
+      "clientW": 320,
+      "scrollW": 320,
+      "scrollH": 4359,
+      "bad": [
+        {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "Открытые задачи",
+          "left": 172.765625,
+          "right": 336.5625,
+          "w": 163.796875,
+          "h": 40
+        },
+        {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "Участники и роли",
+          "left": 341.5625,
+          "right": 505.4375,
+          "w": 163.875,
+          "h": 40
+        },
+        {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "Pull Request и проверки",
+          "left": 510.4375,
+          "right": 723.578125,
+          "w": 213.140625,
+          "h": 40
+        },
+        {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "История релизов",
+          "left": 728.578125,
+          "right": 889.515625,
+          "w": 160.9375,
+          "h": 40
+        },
+        {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "Благодарности",
+          "left": 894.515625,
+          "right": 1039.25,
+          "w": 144.734375,
+          "h": 40
+        },
+        {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "Настройки проекта",
+          "left": 1044.25,
+          "right": 1222.6875,
+          "w": 178.4375,
+          "h": 40
+        },
+        {
+          "tag": "TABLE",
+          "cls": "design-lab-table",
+          "text": "УчастникПроектТип вкладаСтатусНаградаАлина МорозоваOpen CompanionДизайн пустых с",
+          "left": 26,
+          "right": 706,
+          "w": 680,
+          "h": 137.75
+        },
+        {
+          "tag": "THEAD",
+          "cls": "",
+          "text": "УчастникПроектТип вкладаСтатусНаграда",
+          "left": 26,
+          "right": 706,
+          "w": 680,
+          "h": 43.25
+        },
+        {
+          "tag": "TR",
+          "cls": "",
+          "text": "УчастникПроектТип вкладаСтатусНаграда",
+          "left": 26,
+          "right": 706,
+          "w": 680,
+          "h": 43.25
+        },
+        {
+          "tag": "TH",
+          "cls": "",
+          "text": "Тип вклада",
+          "left": 319.28125,
+          "right": 517.9375,
+          "w": 198.65625,
+          "h": 43.25
+        },
+        {
+          "tag": "TH",
+          "cls": "",
+          "text": "Статус",
+          "left": 517.9375,
+          "right": 622.484375,
+          "w": 104.546875,
+          "h": 43.25
+        },
+        {
+          "tag": "TH",
+          "cls": "",
+          "text": "Награда",
+          "left": 622.484375,
+          "right": 706,
+          "w": 83.515625,
+          "h": 43.25
+        },
+        {
+          "tag": "TBODY",
+          "cls": "",
+          "text": "Алина МорозоваOpen CompanionДизайн пустых состоянийПринято+260 XPИван КрыловSmar",
+          "left": 26,
+          "right": 706,
+          "w": 680,
+          "h": 94
+        },
+        {
+          "tag": "TR",
+          "cls": "",
+          "text": "Алина МорозоваOpen CompanionДизайн пустых состоянийПринято+260 XP",
+          "left": 26,
+          "right": 706,
+          "w": 680,
+          "h": 47
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "Дизайн пустых состояний",
+          "left": 319.28125,
+          "right": 517.9375,
+          "w": 198.65625,
+          "h": 47
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "Принято",
+          "left": 517.9375,
+          "right": 622.484375,
+          "w": 104.546875,
+          "h": 47
+        },
+        {
+          "tag": "SPAN",
+          "cls": "badge badge-success",
+          "text": "Принято",
+          "left": 529.9375,
+          "right": 602.46875,
+          "w": 72.53125,
+          "h": 22
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "+260 XP",
+          "left": 622.484375,
+          "right": 706,
+          "w": 83.515625,
+          "h": 47
+        },
+        {
+          "tag": "TR",
+          "cls": "",
+          "text": "Иван КрыловSmart Photo IndexerДокументация WindowsРевью+180 XP",
+          "left": 26,
+          "right": 706,
+          "w": 680,
+          "h": 47
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "Документация Windows",
+          "left": 319.28125,
+          "right": 517.9375,
+          "w": 198.65625,
+          "h": 47
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "Ревью",
+          "left": 517.9375,
+          "right": 622.484375,
+          "w": 104.546875,
+          "h": 47
+        },
+        {
+          "tag": "SPAN",
+          "cls": "badge badge-warning",
+          "text": "Ревью",
+          "left": 529.9375,
+          "right": 589.375,
+          "w": 59.4375,
+          "h": 22
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "+180 XP",
+          "left": 622.484375,
+          "right": 706,
+          "w": 83.515625,
+          "h": 47
+        }
+      ],
+      "tiny": [],
+      "smallTargets": []
+    },
+    "file": "docs/design-qa-snapshots/design-lab_320.png"
+  },
+  {
+    "name": "design-lab",
+    "path": "/design-lab",
+    "width": 390,
+    "metrics": {
+      "iw": 390,
+      "clientW": 390,
+      "scrollW": 390,
+      "scrollH": 4033,
+      "bad": [
+        {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "Участники и роли",
+          "left": 341.5625,
+          "right": 505.4375,
+          "w": 163.875,
+          "h": 40
+        },
+        {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "Pull Request и проверки",
+          "left": 510.4375,
+          "right": 723.578125,
+          "w": 213.140625,
+          "h": 40
+        },
+        {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "История релизов",
+          "left": 728.578125,
+          "right": 889.515625,
+          "w": 160.9375,
+          "h": 40
+        },
+        {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "Благодарности",
+          "left": 894.515625,
+          "right": 1039.25,
+          "w": 144.734375,
+          "h": 40
+        },
+        {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "Настройки проекта",
+          "left": 1044.25,
+          "right": 1222.6875,
+          "w": 178.4375,
+          "h": 40
+        },
+        {
+          "tag": "TABLE",
+          "cls": "design-lab-table",
+          "text": "УчастникПроектТип вкладаСтатусНаградаАлина МорозоваOpen CompanionДизайн пустых с",
+          "left": 26,
+          "right": 706,
+          "w": 680,
+          "h": 137.75
+        },
+        {
+          "tag": "THEAD",
+          "cls": "",
+          "text": "УчастникПроектТип вкладаСтатусНаграда",
+          "left": 26,
+          "right": 706,
+          "w": 680,
+          "h": 43.25
+        },
+        {
+          "tag": "TR",
+          "cls": "",
+          "text": "УчастникПроектТип вкладаСтатусНаграда",
+          "left": 26,
+          "right": 706,
+          "w": 680,
+          "h": 43.25
+        },
+        {
+          "tag": "TH",
+          "cls": "",
+          "text": "Тип вклада",
+          "left": 319.28125,
+          "right": 517.9375,
+          "w": 198.65625,
+          "h": 43.25
+        },
+        {
+          "tag": "TH",
+          "cls": "",
+          "text": "Статус",
+          "left": 517.9375,
+          "right": 622.484375,
+          "w": 104.546875,
+          "h": 43.25
+        },
+        {
+          "tag": "TH",
+          "cls": "",
+          "text": "Награда",
+          "left": 622.484375,
+          "right": 706,
+          "w": 83.515625,
+          "h": 43.25
+        },
+        {
+          "tag": "TBODY",
+          "cls": "",
+          "text": "Алина МорозоваOpen CompanionДизайн пустых состоянийПринято+260 XPИван КрыловSmar",
+          "left": 26,
+          "right": 706,
+          "w": 680,
+          "h": 94
+        },
+        {
+          "tag": "TR",
+          "cls": "",
+          "text": "Алина МорозоваOpen CompanionДизайн пустых состоянийПринято+260 XP",
+          "left": 26,
+          "right": 706,
+          "w": 680,
+          "h": 47
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "Дизайн пустых состояний",
+          "left": 319.28125,
+          "right": 517.9375,
+          "w": 198.65625,
+          "h": 47
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "Принято",
+          "left": 517.9375,
+          "right": 622.484375,
+          "w": 104.546875,
+          "h": 47
+        },
+        {
+          "tag": "SPAN",
+          "cls": "badge badge-success",
+          "text": "Принято",
+          "left": 529.9375,
+          "right": 602.46875,
+          "w": 72.53125,
+          "h": 22
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "+260 XP",
+          "left": 622.484375,
+          "right": 706,
+          "w": 83.515625,
+          "h": 47
+        },
+        {
+          "tag": "TR",
+          "cls": "",
+          "text": "Иван КрыловSmart Photo IndexerДокументация WindowsРевью+180 XP",
+          "left": 26,
+          "right": 706,
+          "w": 680,
+          "h": 47
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "Документация Windows",
+          "left": 319.28125,
+          "right": 517.9375,
+          "w": 198.65625,
+          "h": 47
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "Ревью",
+          "left": 517.9375,
+          "right": 622.484375,
+          "w": 104.546875,
+          "h": 47
+        },
+        {
+          "tag": "SPAN",
+          "cls": "badge badge-warning",
+          "text": "Ревью",
+          "left": 529.9375,
+          "right": 589.375,
+          "w": 59.4375,
+          "h": 22
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "+180 XP",
+          "left": 622.484375,
+          "right": 706,
+          "w": 83.515625,
+          "h": 47
+        }
+      ],
+      "tiny": [],
+      "smallTargets": []
+    },
+    "file": "docs/design-qa-snapshots/design-lab_390.png"
+  },
+  {
+    "name": "design-lab",
+    "path": "/design-lab",
+    "width": 768,
+    "metrics": {
+      "iw": 768,
+      "clientW": 753,
+      "scrollW": 753,
+      "scrollH": 3184,
+      "bad": [
+        {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "История релизов",
+          "left": 759.578125,
+          "right": 920.515625,
+          "w": 160.9375,
+          "h": 40
+        },
+        {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "Благодарности",
+          "left": 925.515625,
+          "right": 1070.25,
+          "w": 144.734375,
+          "h": 40
+        },
+        {
+          "tag": "BUTTON",
+          "cls": "",
+          "text": "Настройки проекта",
+          "left": 1075.25,
+          "right": 1253.6875,
+          "w": 178.4375,
+          "h": 40
+        }
+      ],
+      "tiny": [],
+      "smallTargets": []
+    },
+    "file": "docs/design-qa-snapshots/design-lab_768.png"
+  },
+  {
+    "name": "design-lab",
+    "path": "/design-lab",
+    "width": 1440,
+    "metrics": {
+      "iw": 1440,
+      "clientW": 1425,
+      "scrollW": 1425,
+      "scrollH": 2241,
+      "bad": [],
+      "tiny": [],
+      "smallTargets": []
+    },
+    "file": "docs/design-qa-snapshots/design-lab_1440.png"
+  }
+]

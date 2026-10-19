@@ -1,0 +1,15 @@
+"use client";
+
+import Link from "next/link";
+import { useMemo, useState } from "react";
+import { CheckCircle2, GitPullRequestArrow, MessageCircle, Search, SlidersHorizontal, Star } from "lucide-react";
+import { Badge } from "@/components/ui/primitives";
+import { specialists } from "@/data/mock-data";
+
+export function PeopleView({ onCreateTask, onMessage }: { onCreateTask: () => void; onMessage: (name: string) => void }) {
+  const [query, setQuery] = useState("");
+  const [availableOnly, setAvailableOnly] = useState(false);
+  const filtered = useMemo(() => specialists.filter((person) => (!availableOnly || person.available) && `${person.name} ${person.role} ${person.skills.join(" ")}`.toLowerCase().includes(query.trim().toLowerCase())), [availableOnly, query]);
+  const slug = (name: string) => name.toLowerCase().replaceAll("ё", "е").replace(/[^a-zа-я0-9]+/gi, "-").replace(/^-|-$/g, "");
+  return <div className="view-stack"><section className="page-banner panel"><div><Badge tone="violet">Открытые профили вклада</Badge><h2>Найдите участника, наставника или мейнтейнера</h2><p>Подбор учитывает подтверждённые навыки, историю принятых вкладов, качество ревью и активность в похожих open-source проектах.</p><button className="ghost-button banner-action" onClick={onCreateTask}>Создать проект и собрать команду</button></div><div className="banner-orbit"><span>OSS</span><i /><i /><i /></div></section><section className="panel content-panel"><div className="filter-bar"><label className="search-box wide"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Имя, навык, проект или роль" /></label><button className={availableOnly ? "ghost-button active" : "ghost-button"} onClick={() => setAvailableOnly((value) => !value)} aria-pressed={availableOnly}><SlidersHorizontal size={17} />{availableOnly ? "Только доступные" : "Фильтры"}</button></div><div className="people-grid">{filtered.map((person) => <article className="person-card" key={person.name}><div className="person-top"><div className="avatar-gradient">{person.initials}<span className={person.available ? "online" : "busy"} /></div><div className="person-rating"><Star size={15} fill="currentColor" />{person.rating}</div></div><h3>{person.name}</h3><p>{person.role}</p><div className="tag-list centered">{person.skills.map((skill) => <span key={skill}>{skill}</span>)}</div><div className="person-stats"><div><strong>{person.reliability}%</strong><span>доведено до ревью</span></div><div><strong>{person.contributions}</strong><span>вкладов</span></div></div><div className="person-status">{person.available ? <><CheckCircle2 />Готов к новому проекту</> : <><GitPullRequestArrow />Занят ревью</>}</div><div className="button-row"><button className="primary-button small" onClick={() => onMessage(person.name)}><MessageCircle size={16} />Написать</button><Link className="ghost-button small" href={`/u/${slug(person.name)}`}>Профиль</Link></div></article>)}</div></section></div>;
+}

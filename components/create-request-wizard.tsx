@@ -1,0 +1,12 @@
+"use client";
+
+import { useState } from "react";
+import { AlertTriangle, CheckCircle2, HandCoins, X } from "lucide-react";
+import { Badge } from "@/components/ui/primitives";
+
+export function CreateRequestWizard({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const [done, setDone] = useState(false);
+  if (!open) return null;
+  function close() { setDone(false); onClose(); }
+  return <div className="modal-layer" role="dialog" aria-modal="true" aria-label="Публикация запроса сообщества"><button className="modal-backdrop" onClick={close} aria-label="Закрыть" /><section className="modal-card compact-modal"><header className="modal-header"><div><Badge tone="warning"><HandCoins /> Дополнительный раздел</Badge><h2>Опубликовать простой запрос</h2><p>Это доска объявлений. Платформа не является стороной договорённости, не хранит деньги и не гарантирует выполнение.</p></div><button className="icon-button" onClick={close} aria-label="Закрыть"><X /></button></header>{!done ? <div className="compact-modal-body"><div className="legal-lite-note"><AlertTriangle /><div><strong>Ответственность остаётся у участников</strong><span>Обсудите объём, срок, оплату, права и способ передачи результата напрямую. Не публикуйте запрещённые услуги, ключи неизвестного происхождения или обход ограничений.</span></div></div><label className="field-label">Название запроса</label><input defaultValue="Нужна помощь с небольшой автоматизацией" /><label className="field-label">Тип</label><select defaultValue="paid"><option value="free">Бесплатная помощь</option><option value="paid">Платный запрос</option></select><label className="field-label">Описание</label><textarea defaultValue="Опишите небольшую задачу, ожидаемый результат и способ связи. Не добавляйте секреты и персональные данные." /><label className="field-label">Ориентир по оплате</label><input defaultValue="по договорённости" /><label className="agreement-check"><input type="checkbox" defaultChecked /><span>Я понимаю, что платформа выступает только как информационная площадка.</span></label><button className="primary-button full" onClick={() => setDone(true)}>Опубликовать запрос</button></div> : <div className="dialog-success"><CheckCircle2 /><h3>Запрос опубликован в макете</h3><p>В рабочей версии он пройдёт автоматическую и при необходимости ручную модерацию.</p><button className="ghost-button" onClick={close}>Закрыть</button></div>}</section></div>;
+}

@@ -1,0 +1,3 @@
+import { NextRequest,NextResponse } from "next/server";import { SESSION_COOKIE_NAME,verifySessionToken } from "@/lib/server/session";
+export async function proxy(request:NextRequest){const pathname=request.nextUrl.pathname;if(pathname==="/design-lab"&&process.env.NODE_ENV==="production"&&process.env.ENABLE_DESIGN_LAB!=="true")return new NextResponse("Not Found",{status:404,headers:{"Content-Type":"text/plain; charset=utf-8"}});if(pathname==="/"){const session=await verifySessionToken(request.cookies.get(SESSION_COOKIE_NAME)?.value,{skipPersistentCheck:true});if(!session){const login=new URL("/login",request.url);login.searchParams.set("next",pathname);return NextResponse.redirect(login);}}return NextResponse.next();}
+export const config={matcher:["/","/design-lab"]};

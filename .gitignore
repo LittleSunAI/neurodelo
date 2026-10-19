@@ -1,0 +1,43 @@
+# Modules, builds and transient test files
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+.test-build/
+.turbo/
+*.tsbuildinfo
+
+# Local user data, uploaded files, logs, backups
+.data/
+backups/
+*.log
+npm-debug.log*
+.pnpm-debug.log*
+*.sqlite
+*.sqlite3
+
+# Secrets (keep only public templates)
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Editor and operating system files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Temporary installation archives and render artifacts
+*.zip
+*.7z
+*.rar

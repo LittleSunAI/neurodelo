@@ -1,0 +1,23 @@
+import assert from "node:assert/strict";
+import { mkdtempSync, rmSync } from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { resetPersistentStoreForTests } from "../lib/server/persistence";
+import { claimLocalJob, completeLocalJob, enqueueLocalJob, failLocalJob, listLocalJobs } from "../lib/server/jobs";
+
+const root = mkdtempSync(path.join(os.tmpdir(), "neurodelo-jobs-"));
+process.env.NEURODELO_DATA_DIR = root;
+resetPersistentStoreForTests();
+const first = enqueueLocalJob({ type: "email.digest", payload: { accountId: "a" }, deduplicationKey: "digest-a" });
+const duplicate = enqueueLocalJob({ type: "email.digest", payload: { accountId: "a" }, deduplicationKey: "digest-a" });
+assert.equal(first.id, duplicate.id);
+const claimed = claimLocalJob("worker-1"); assert.equal(claimed?.status, "processing");
+assert.equal(completeLocalJob(first.id, { sent: true })?.status, "completed");
+const retry = enqueueLocalJob({ type: "object.scan", payload: { id: "f" }, maxAttempts: 2 });
+claimLocalJob("worker-1");
+assert.equal(failLocalJob(retry.id, "temporary", 0)?.status, "queued");
+claimLocalJob("worker-2");
+assert.equal(failLocalJob(retry.id, "permanent", 0)?.status, "failed");
+assert.equal(listLocalJobs().length, 2);
+rmSync(root, { recursive: true, force: true });
+console.log("JOB QUEUE CONTRACT: OK");
