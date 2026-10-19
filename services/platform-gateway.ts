@@ -112,10 +112,7 @@ export const defaultProfile: UserProfile = {
   github: "tbv-open",
   telegram: "@tbv_neuro",
   publicProfileSlug: "tbv",
-  supportLinks: [
-    { id: "support-github", provider: "github-sponsors", label: "GitHub Sponsors", url: "https://github.com/sponsors/tbv-open", enabled: true, note: "Добровольная поддержка open-source работы" },
-    { id: "support-collective", provider: "open-collective", label: "Open Collective", url: "https://opencollective.com/neurodelo", enabled: false, note: "Будущий публичный бюджет проекта" },
-  ],
+  supportLinks: [],
 };
 
 export const defaultRecognitionRecords: RecognitionRecord[] = [

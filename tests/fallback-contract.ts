@@ -22,6 +22,7 @@ async function main() {
   const initial = await platformGateway.loadState();
   assert(initial.version === 12, "Состояние должно использовать схему версии 11");
   assert(initial.onboardingCompleted === false, "Новый профиль должен открывать регистрацию");
+  assert(initial.profile.supportLinks.length === 0, "Новый профиль не должен содержать чужие спонсорские ссылки");
   assert(initial.profile.heroProgression.modelVersion === "advanced-foundation-v2", "Должна существовать игровая основа");
   assert(initial.recognitionRecords.length > 0, "Должна существовать демонстрационная история признания");
 

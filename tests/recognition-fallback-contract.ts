@@ -16,7 +16,7 @@ async function main() {
   assert(state.version === 12, "Recognition должен использовать схему версии 11");
   assert(state.xpTransactions.length >= 4, "Должен существовать журнал XP");
   assert(state.releaseCredits.length >= 2, "Должны существовать участники релизов");
-  assert(state.profile.supportLinks.length >= 1, "Профиль должен поддерживать внешние ссылки поддержки");
+  assert(state.profile.supportLinks.length === 0, "Профиль не должен содержать чужие ссылки поддержки");
 
   const transaction = state.xpTransactions.find((item) => item.id === "xp-own-1");
   assert(transaction, "Должно существовать тестовое начисление пользователя");
@@ -32,7 +32,7 @@ async function main() {
   assert(migrated.version === 12, "Состояние версии 8 должно мигрировать в версию 11");
   assert(migrated.xpTransactions.length > 0, "Миграция должна добавить XP-журнал");
   assert(migrated.releaseCredits.length > 0, "Миграция должна добавить release credits");
-  assert(migrated.profile.supportLinks.length > 0, "Миграция должна добавить ссылки поддержки");
+  assert(migrated.profile.supportLinks.length === 0, "Миграция не должна добавлять чужие ссылки поддержки");
 
   console.log(JSON.stringify({ schemaVersion: 11, xpLedger: "ok", reversal: "ok", releases: "ok", supportLinks: "ok", migrationFromV8: "ok" }, null, 2));
 }
