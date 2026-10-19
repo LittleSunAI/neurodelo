@@ -1,5 +1,5 @@
 export {};
-import { mkdtempSync, rmSync } from "node:fs";
+import { mkdtempSync, readFileSync, rmSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 
@@ -25,6 +25,12 @@ async function main() {
     const email = `persistent-${Date.now()}@example.com`;
     const registered = await registerLocalUser({ email, name: "Persistent User", password: "StrongPersistent123" });
     assert(registered.ok, "Пользователь должен зарегистрироваться");
+    const storedUsers = JSON.parse(readFileSync(path.join(directory, "auth-users.json"), "utf8")) as { records: Record<string, Record<string, unknown>> };
+    for (const demoEmail of ["demo@neurodelo.local", "blocked@neurodelo.local", "unverified@neurodelo.local"]) {
+      assert(storedUsers.records[demoEmail], "Демо-пользователь должен сохраняться на диске");
+      assert(typeof storedUsers.records[demoEmail].salt === "string" && typeof storedUsers.records[demoEmail].passwordHash === "string", "Демо-пароль должен храниться как соль и хеш");
+    }
+    assert(Object.values(storedUsers.records).every((user) => !("password" in user)), "JSON пользователей не должен содержать plaintext-поле password");
     persistence.resetPersistentStoreForTests();
     assert((await authenticateLocalUser(email, "StrongPersistent123")).ok, "Пользователь должен входить после повторного открытия файлового store");
 

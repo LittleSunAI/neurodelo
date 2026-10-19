@@ -52,8 +52,9 @@ async function seedDemo() {
   ];
   for (const demo of demos) {
     if (store.get<LocalUser>(USERS_NS, demo.email)) continue;
-    const credentials = await makeCredentials(demo.password);
-    store.set<LocalUser>(USERS_NS, demo.email, { ...demo, ...credentials, createdAt: now, updatedAt: now });
+    const { password, ...profile } = demo;
+    const credentials = await makeCredentials(password);
+    store.set<LocalUser>(USERS_NS, demo.email, { ...profile, ...credentials, createdAt: now, updatedAt: now });
   }
   store.set(META_NS, "demo-seeded", true);
 }
